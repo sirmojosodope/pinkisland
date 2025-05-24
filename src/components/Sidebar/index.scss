@@ -1,98 +1,51 @@
-.nav-bar {
-  width: 60px;
-  height: 100vh;
+.interface-fragment {
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
+  z-index: 1000;
+  font-size: 1.8rem;
+  font-family: monospace;
+  opacity: 0.8;
+  color: #f806cc;
+  transition: opacity 0.3s ease;
+
+  a {
+    color: #f806cc;
+    margin: 0 0.8rem;
+    text-decoration: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.1);
+      text-shadow: 0 0 8px #f806cc66;
+    }
+  }
+}
+
+.glyph {
+  font-size: 2rem;
+  font-family: 'La Belle Aurore', cursive;
+  color: #f806ccaa;
+  letter-spacing: 1px;
+}
+
+.top-left {
+  top: 2rem;
+  left: 2rem;
+}
+
+.bottom-left {
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.top-right {
+  top: 2rem;
+  right: 2rem;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 0;
-  background: transparent;
-  backdrop-filter: blur(3px);
-  box-shadow: none;
-  border: none;
+  gap: 1.6rem;
 
-  .logo {
-    img {
-      width: 32px;
-      opacity: 0.7;
-      filter: grayscale(100%) brightness(1.2);
-      transition: transform 0.3s ease, opacity 0.3s ease;
-
-      &:hover {
-        transform: scale(1.1);
-        opacity: 1;
-      }
-    }
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.4rem;
-
-    a {
-      position: relative;
-      font-size: 2rem;
-      color: #a59f94;
-      opacity: 0.4;
-      transition: color 0.3s ease, opacity 0.3s ease;
-
-      &:hover,
-      &.active {
-        color: #f7d417;
-        opacity: 0.8;
-
-        &::after {
-          opacity: 1;
-        }
-
-        svg {
-          opacity: 0.5;
-        }
-      }
-
-      &::after {
-        content: attr(data-label);
-        position: absolute;
-        left: 70px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 0.7rem;
-        font-family: 'Courier New', monospace;
-        letter-spacing: 1px;
-        color: #f7d417;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-      }
-    }
-
-    .about-link::after     { content: 'ABOUT'; }
-    .contact-link::after   { content: 'CONTACT'; }
-    .portfolio-link::after { content: 'PORTAL'; }
-    a:first-child::after   { content: 'HOME'; }
-  }
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-
-    li a {
-      font-size: 1.6rem;
-      color: #a59f94;
-      opacity: 0.4;
-      transition: color 0.3s ease, opacity 0.3s ease;
-
-      &:hover {
-        color: #f7d417;
-        opacity: 0.8;
-      }
-    }
+  svg {
+    font-size: 1.8rem;
+    color: #f7d417;
   }
 }

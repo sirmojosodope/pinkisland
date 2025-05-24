@@ -1,65 +1,75 @@
-/* Core root sizing */
-html {
+/* === Root Sizing & System Colors === */
+:root {
   font-size: 62.5%;
-  scroll-behavior: smooth;
+  --black-void: #121212;
+  --chalk-white: #e0ddd7;
+  --bone-soft: #bcb7af;
+  --signal-pink: #f806cc;
+  --threshold-yellow: #f7d417;
+  --portal-blue: #7277ff;
 }
 
-/* Global body baseline */
-body {
+/* === Core Reset === */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Body & Typography === */
+body {
   font-family: 'Coolvetica', 'Helvetica Neue', sans-serif;
-  background-color: #121212; /* deep black-charcoal */
-  color: #e0ddd7; /* soft chalk white */
+  background-color: var(--black-void);
+  color: var(--chalk-white);
   font-size: 1.4rem;
   line-height: 1.6;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
   cursor: crosshair;
 }
 
-/* Headings — consistent with portal tone */
+/* === Headings === */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Coolvetica', 'Helvetica Neue', sans-serif;
-  color: #e0ddd7;
+  font-family: 'Coolvetica', sans-serif;
+  color: var(--chalk-white);
   font-weight: 400;
   letter-spacing: -0.015em;
-  margin: 0;
 }
 
-/* Paragraphs and base text */
+/* === Base Text === */
 p {
   font-family: 'Helvetica Neue', sans-serif;
-  color: #bcb7af; /* soft bone */
-  font-size: 1.4rem;
-  margin: 0 0 1.5rem;
+  color: var(--bone-soft);
+  margin-bottom: 1.5rem;
 }
 
-/* Strong text emphasis */
+/* === Highlight Text === */
 strong {
-  color: #f806cc;
+  color: var(--signal-pink);
   font-weight: 500;
 }
 
-/* Universal reset for form elements */
+/* === Links === */
+a {
+  color: var(--portal-blue);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 6px var(--portal-blue);
+}
+
+/* === Forms === */
 input,
 textarea,
 button {
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 1.4rem;
-  color: #e0ddd7;
+  color: var(--chalk-white);
   background: transparent;
   border: none;
   outline: none;
-}
-
-/* Anchor links */
-a {
-  color: #f806cc;
-  text-decoration: none;
-}
-
-a:hover {
-  text-shadow: 0 0 6px #f806cc66;
 }

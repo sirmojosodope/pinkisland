@@ -1,11 +1,8 @@
 import React from 'react'
-import Sigil from './index.scss'
-
-
+import './index.scss'
 
 const SigilComponent = () => {
   return <div className="sigil"></div>
 }
 
 export default SigilComponent
-

@@ -1,33 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Loader from 'react-loaders'
-import Logo from './Logo'
 import './index.scss'
 
 const Home = () => {
-  const [textVisible, setTextVisible] = useState(false)
+  const [ready, setReady] = useState(false)
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setTextVisible(true)
-    }, 1800)
+      setReady(true)
+    }, 1600)
     return () => clearTimeout(timeout)
   }, [])
 
   return (
-    <>
-      <div className="container home-page">
-        <div className={`text-zone ${textVisible ? 'visible' : ''}`}>
-          <h1 className="phase-text">Pinkisland</h1>
-          <p className="sub-text">entry confirmed — threshold stable</p>
-          <Link to="/contact" className="flat-button">
-            OPEN CHANNEL
-          </Link>
-        </div>
-        <Logo />
+    <div className="home-container">
+      <div className={`glyph-stack ${ready ? 'active' : ''}`}>
+        <div className="glyph-core">∴</div>
+        <div className="status-text">entry confirmed — threshold stable</div>
+        <Link to="/portal" className="open-link">
+          open channel
+        </Link>
       </div>
-      <Loader type="pacman" />
-    </>
+      <div className="email-tag">stoverlee29@gmail.com</div>
+    </div>
   )
 }
 
