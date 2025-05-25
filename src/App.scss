@@ -1,80 +1,114 @@
-$primary-color: #f7d417;
+// ─────────────────────────────
+// Pinkisland: Global Variables
+// ─────────────────────────────
 
-// Font-face definitions
+:root {
+  --charcoal: #121212;
+  --ghost: #f5f5f5;
+  --signal-pink: #ff2ebb;
+  --dust: #999999;
+  --blue-violet: #3f3dff;
+  --signal-yellow: #fce96a;
+
+  --text-primary: #e0ddd7;
+  --text-secondary: #bcb7af;
+  --ui-border: #b69f94;
+  --hover-glow: #f806cc55;
+}
+
+// ─────────────────────────────
+// Fonts
+// ─────────────────────────────
+
 @font-face {
-  font-family: 'Helvetica Neue';
-  src: url('./Assets/fonts/helvetica-neu.ttf') format('truetype');
+  font-family: 'Coolvetica';
+  src: url('./Assets/fonts/CoolveticaRg-Regular.woff2') format('woff2');
   font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
   font-family: 'La Belle Aurore';
-  src: url('./Assets/fonts/LaBelleAurore.woff2') format('woff2'),
-       url('./Assets/fonts/LaBelleAurore.woff') format('woff');
+  src: url('./Assets/fonts/LaBelleAurore.woff2') format('woff2');
   font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Coolvetica';
-  src: url('./Assets/fonts/CoolveticaRg-Regular.woff2') format('woff2'),
-       url('./Assets/fonts/CoolveticaRg-Regular.woff') format('woff');
+  font-family: 'Helvetica Neue';
+  src: url('./Assets/fonts/helvetica-neu.ttf') format('truetype');
   font-weight: normal;
-  font-style: normal;
 }
 
-// Base typography
+// ─────────────────────────────
+// Base Styling
+// ─────────────────────────────
+
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #1a1a1a;
+  background-color: var(--charcoal);
   font-family: 'Helvetica Neue', sans-serif;
-  color: #e0ddd7;
+  color: var(--text-primary);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: crosshair;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  font-family: 'Coolvetica';
+  font-family: 'Coolvetica', sans-serif;
   font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: -0.015em;
 }
 
 p {
   font-size: 1.4rem;
   line-height: 1.6;
-  color: #bcb7af;
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem;
 }
 
-// Input aesthetics
+strong {
+  color: var(--signal-pink);
+  font-weight: 500;
+}
+
+// ─────────────────────────────
+// Forms
+// ─────────────────────────────
+
 input,
-textarea {
+textarea,
+button {
   font-family: 'Helvetica Neue', sans-serif;
-  background: none;
-  border: 1px solid #b69f94;
-  padding: 10px;
   font-size: 1.3rem;
-  color: #e0ddd7;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--ui-border);
+  padding: 10px;
   outline: none;
+  transition: all 0.3s ease;
 
   &::placeholder {
     color: #8a817c;
   }
 
   &:focus {
-    border-color: #f806cc;
-    box-shadow: 0 0 5px #f806cc55;
-    transition: 0.3s ease;
+    border-color: var(--signal-pink);
+    box-shadow: 0 0 5px var(--hover-glow);
   }
 }
 
-// Loader visibility
+// ─────────────────────────────
+// Loader + Utility
+// ─────────────────────────────
+
 .loader-hidden {
   display: none;
 }
@@ -82,45 +116,49 @@ textarea {
 .loader-active {
   display: block;
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  inset: 0;
   margin: auto;
   width: 50px;
   height: 50px;
   animation: fadeOut 1s 1s forwards;
 }
 
-// Utility classes
 .flat-button {
-  font-size: 13px;
-  font-family: sans-serif;
-  letter-spacing: 4px;
-  padding: 10px 18px;
+  font-size: 1.3rem;
+  font-family: 'Helvetica Neue', sans-serif;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  background: none;
-  border: 1px solid #b69f94;
-  color: #b69f94;
+  background: transparent;
+  border: 1px solid var(--ui-border);
+  color: var(--ui-border);
+  padding: 10px 18px;
   cursor: pointer;
   transition: background 0.3s ease;
 
   &:hover {
-    background: #b69f94;
-    color: #1d1d1d;
+    background: var(--blue-violet);
+    border-color: var(--blue-violet);
+    color: var(--ghost);
+    box-shadow: 0 0 6px var(--blue-violet);
   }
 }
 
-@import 'animate.css';
-@import '~loaders.css/src/animations/pacman.scss';
+// ─────────────────────────────
+// System Fonts + Mono Labels
+// ─────────────────────────────
+
 .mono {
   font-family: monospace;
-  font-size: 13px;
-  color: #e0ddd7;
+  font-size: 1.3rem;
+  color: var(--text-primary);
   line-height: 1.8;
 }
-:root {
-  --charcoal: #121212;
-  --ghost-white: #F5F5F5;
-  --signal-pink: #FF2EBB;
-  --ash: #999999;
-  --blue-violet: #3F3DFF;
-  --signal-yellow: #FCE96A;
-}
+
+// ─────────────────────────────
+// External Imports
+// ─────────────────────────────
+
+@import 'animate.css';
+@import '~loaders.css/src/animations/pacman.scss';
+
+

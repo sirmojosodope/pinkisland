@@ -1,31 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Loader from 'react-loaders'
-import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 
 const Portfolio = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
-
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 3000)
-    return () => clearTimeout(timeout)
+    const audio = new Audio('/sounds/noise-loop.mp3') // ✅ Corrected path
+    audio.loop = true
+    audio.volume = 0.2
+    audio.play().catch(() => null) // browser autoplay guard
+
+    return () => {
+      audio.pause()
+      audio.currentTime = 0
+    }
   }, [])
 
   return (
     <>
       <div className="container portfolio-page">
-        <div className="text-zone">
-          <h1>
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={['P', 'o', 'r', 't', 'a', 'l']}
-              idx={15}
-            />
-          </h1>
-          <p className="fragment">no artifacts // yet</p>
-          <p className="fragment">this space is held for transmission</p>
+        <div className="text-zone ambient-only">
           <p className="fragment final">standby for emergence</p>
         </div>
 
