@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.scss'
-import Sigil from '../Sigil/index'
+import Sigil from '../Sigil/'
 
 const Sidebar = () => {
   return (
