@@ -215,3 +215,47 @@
   animation: softFloat 8s ease-in-out infinite;
 }
 }
+@media (max-width: 768px) {
+  .portfolio-page {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding: 4rem 2rem;
+  }
+
+  .text-zone {
+    position: static;
+    transform: none;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .offer-grid {
+    position: static;
+    transform: none;
+    width: 100%;
+    padding: 0 1rem;
+    margin-bottom: 4rem;
+  }
+
+  .stage-void {
+    position: static;
+    transform: none;
+    margin-top: 2rem;
+    width: 180px;
+    height: 180px;
+  }
+
+  .footer-contact {
+    position: static;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .background-sigil {
+    display: none;
+  }
+}
