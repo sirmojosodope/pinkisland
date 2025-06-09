@@ -140,17 +140,41 @@
   }
 
   /* 📱 Mobile Responsive */
-  @media (max-width: 768px) {
+ @media (max-width: 768px) {
+  .portfolio-page {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4rem 1.6rem;
+    height: auto;
+
+    .text-zone {
+      position: static;
+      transform: none;
+      margin-bottom: 2rem;
+      text-align: center;
+
+      .fragment {
+        font-size: 12px;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .stage-void {
+      position: static;
+      margin-top: 2rem;
+      width: 180px;
+      height: 180px;
+    }
+
     .offer-grid {
-      top: auto;
-      bottom: 8%;
-      transform: translateX(-50%);
-      padding: 0 1.6rem;
+      position: static;
+      transform: none;
+      margin-top: 2rem;
       gap: 3rem;
     }
 
     .offer-line {
-      font-size: 12px;
       gap: 1rem;
 
       h2 {
@@ -159,38 +183,25 @@
 
       p {
         font-size: 12px !important;
-        padding: 0 0.4rem;
-        max-width: 90vw;
+        line-height: 1.5;
+        max-width: 100%;
+        padding: 0 1rem;
       }
 
       .glyph {
-        font-size: 1.8rem;
-        transition: filter 0.3s ease, transform 0.3s ease;
-
-        &:hover {
-          filter: drop-shadow(0 0 8px var(--blue-violet)) brightness(1.2);
-          transform: scale(1.1);
-        }
-      }
-    }
-
-    .text-zone {
-      top: 6%;
-      left: 6%;
-      transform: none;
-
-      .fragment {
-        font-size: 12px;
+        font-size: 2rem;
       }
     }
 
     .footer-contact {
+      position: static;
+      margin-top: 4rem;
+      text-align: center;
       font-size: 10px;
-      right: 10px;
-      bottom: 10px;
     }
   }
 }
+
 
 /* 🎛 Animations */
 @keyframes fadeInText {
@@ -262,4 +273,5 @@
   50% {
     transform: translateY(-6px);
   }
+}
 }
