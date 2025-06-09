@@ -140,52 +140,54 @@
   }
 
   /* 📱 Mobile Responsive */
- @media (max-width: 768px) {
+ /* ─────────────────────────────
+   📱 Mobile Responsiveness
+   ───────────────────────────── */
+@media (max-width: 768px) {
   .portfolio-page {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
-    padding: 4rem 1.6rem;
+    padding: 2rem 1.6rem;
     height: auto;
+    min-height: 100vh;
 
     .text-zone {
-      position: static;
+      position: relative;
+      top: unset;
+      left: unset;
       transform: none;
-      margin-bottom: 2rem;
-      text-align: center;
+      margin-bottom: 2.4rem;
+      width: 100%;
+      text-align: left;
 
       .fragment {
         font-size: 12px;
-        margin-bottom: 1rem;
+        text-align: left;
       }
     }
 
-    .stage-void {
-      position: static;
-      margin-top: 2rem;
-      width: 180px;
-      height: 180px;
-    }
-
     .offer-grid {
-      position: static;
+      position: relative;
+      top: unset;
+      left: unset;
       transform: none;
-      margin-top: 2rem;
+      width: 100%;
       gap: 3rem;
     }
 
     .offer-line {
       gap: 1rem;
+      font-size: 12px;
+      padding: 0 0.4rem;
 
       h2 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
 
       p {
         font-size: 12px !important;
-        line-height: 1.5;
-        max-width: 100%;
-        padding: 0 1rem;
+        margin-bottom: 2rem;
       }
 
       .glyph {
@@ -193,14 +195,30 @@
       }
     }
 
+    .stage-void {
+      right: 1rem;
+      top: unset;
+      bottom: 2rem;
+      transform: none;
+      width: 160px;
+      height: 160px;
+    }
+
     .footer-contact {
-      position: static;
-      margin-top: 4rem;
+      position: relative;
+      margin-top: 3rem;
+      right: unset;
+      bottom: unset;
       text-align: center;
-      font-size: 10px;
+      width: 100%;
+    }
+
+    .background-sigil {
+      font-size: 100px;
     }
   }
 }
+
 
 
 /* 🎛 Animations */
