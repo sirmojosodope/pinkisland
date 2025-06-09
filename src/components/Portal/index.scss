@@ -215,46 +215,59 @@
 /* Mobile */
 @media (max-width: 768px) {
   html, body {
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
+    height: auto;
   }
 
   .portfolio-page {
-    display: block;
     position: relative;
     height: auto;
     min-height: 100vh;
-    padding: 2rem 1rem;
+    display: block;
+    padding: 4rem 1rem 2rem;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: visible;
+  }
+
+  .text-zone {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 2rem;
+    text-align: center;
   }
 
   .offer-grid {
-    position: static;
+    position: relative;
+    top: auto;
+    left: auto;
     transform: none;
     animation: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4rem;
-  }
-
-  .text-zone {
-    position: static;
-    transform: none;
-    text-align: center;
-    margin-bottom: 2rem;
+    z-index: 3;
   }
 
   .stage-void {
-    position: static;
+    position: relative;
+    top: auto;
+    right: auto;
     transform: none;
-    margin: 2rem auto;
+    margin: 4rem auto;
   }
 
   .footer-contact {
-    position: static;
+    position: relative;
+    bottom: auto;
+    right: auto;
     margin-top: 4rem;
     text-align: center;
   }
 }
+
 
