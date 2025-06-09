@@ -143,7 +143,50 @@
  /* ─────────────────────────────
    📱 Mobile Responsiveness
    ───────────────────────────── */
+@media (max-width: 768px) {
+  .portfolio-page {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding: 6rem 2rem 4rem;
+  }
 
+  .text-zone {
+    position: static;
+    transform: none;
+    margin-bottom: 4rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .offer-grid {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .stage-void {
+    position: static;
+    transform: none;
+    margin-top: 6rem;
+    width: 180px;
+    height: 180px;
+  }
+
+  .footer-contact {
+    position: static;
+    margin-top: 5rem;
+    text-align: center;
+    font-size: 11px;
+  }
+
+  .background-sigil {
+    display: none;
+  }
+}
 
 
 
@@ -217,50 +260,6 @@
   }
   50% {
     transform: translateY(-6px);
-  }
-}
-@media (max-width: 768px) {
-  .portfolio-page {
-    height: auto;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    overflow-y: auto;
-    padding: 6rem 2rem 4rem;
-  }
-
-  .text-zone {
-    position: static;
-    transform: none;
-    margin-bottom: 4rem;
-    width: 100%;
-    text-align: center;
-  }
-
-  .offer-grid {
-    position: static;
-    transform: none;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .stage-void {
-    position: static;
-    transform: none;
-    margin-top: 6rem;
-    width: 180px;
-    height: 180px;
-  }
-
-  .footer-contact {
-    position: static;
-    margin-top: 5rem;
-    text-align: center;
-    font-size: 11px;
-  }
-
-  .background-sigil {
-    display: none;
   }
 }
 }
