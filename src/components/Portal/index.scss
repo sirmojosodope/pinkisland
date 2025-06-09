@@ -1,6 +1,7 @@
 .portfolio-page {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background: #121212;
   position: relative;
   overflow: hidden;
@@ -218,26 +219,43 @@
 }
 @media (max-width: 768px) {
   .portfolio-page {
-    height: auto;
-    min-height: 100vh;
     overflow-y: auto;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding-top: 6rem;
-    padding-bottom: 12rem;
+    display: block;
+    padding: 4rem 1.2rem;
   }
 
   .offer-grid {
     position: static;
     transform: none;
-    padding: 0 1rem;
-    margin: 0 auto;
+    animation: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 2rem;
+  }
+
+  .offer-line {
+    animation: none;
+    opacity: 1;
   }
 
   .text-zone {
     position: static;
     transform: none;
-    padding: 0 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .stage-void {
+    position: static;
+    transform: none;
+    margin: 3rem auto;
+  }
+
+  .footer-contact {
+    position: static;
+    margin-top: 4rem;
+    text-align: center;
   }
 }
