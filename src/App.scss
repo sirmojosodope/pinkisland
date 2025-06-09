@@ -142,6 +142,10 @@ button {
     box-shadow: 0 0 6px var(--blue-violet);
   }
 }
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
 
 // ─────────────────────────────
 // System Fonts + Mono Labels
